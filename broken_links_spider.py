@@ -5,6 +5,12 @@ from scrapy.item import Item, Field
 import config
 
 
+class BrokenItem(Item):
+    url = Field()
+    referer = Field()
+    status = Field()
+
+
 class BrokenLinksSpider(CrawlSpider):
     name = config.name
     allowed_domains = config.allowed_domains
@@ -14,7 +20,7 @@ class BrokenLinksSpider(CrawlSpider):
 
     def parse_item(self, response):
         if response.status == 404:
-            item = Item()
+            item = BrokenItem()
             item['url'] = response.url
             item['referer'] = response.request.headers.get('Referer')
             item['status'] = response.status
