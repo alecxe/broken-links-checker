@@ -1,7 +1,7 @@
 Usage
 -------------
 
-Configure urls to parse in config.py.
+Configure urls to parse in config.py. Then, run:
 
     scrapy runspider broken_links_spider.py -o output.json
 
