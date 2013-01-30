@@ -1,6 +1,8 @@
-Using github help checker
+Usage
 -------------
 
-    scrapy runspider github_help_spider.py -o output.json
+Configure urls to parse in config.py.
+
+    scrapy runspider broken_links_spider.py -o output.json
 
 Then check 404 items in the output.json file. 
